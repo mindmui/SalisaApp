@@ -45,7 +45,6 @@ public class Apples extends AppCompatActivity {
                 builder.setTitle("Event has been recorded");
                 builder.setMessage("Event name: "+AFInAppEventType.PURCHASE+"\nEvent values: "+eventValue);
                 builder.create();
-
                 builder.show();
 
 
