@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
     package="salisa.n.appsflyer.com">
 
     <uses-permission android:name="android.permission.INTERNET" />
@@ -27,9 +28,11 @@
                 <category android:name="android.intent.category.DEFAULT" />
                 <category android:name="android.intent.category.BROWSABLE" />
 
+                <!-- replace mainactivity with blank, add ignore URL check-->
                 <data
-                    android:host="mainactivity"
-                    android:scheme="salisa" />
+                    android:host=""
+                    android:scheme="salisa"
+                    tools:ignore="AppLinkUrlError" />
             </intent-filter>
             <intent-filter android:autoVerify="true">
                 <action android:name="android.intent.action.VIEW" />
@@ -41,6 +44,12 @@
                     android:host="salisa.onelink.me"
                     android:pathPrefix="/F3t6"
                     android:scheme="https" />
+
+                <!-- branded link -->
+                <data
+                    android:host="go.mind.in.th"
+                    android:scheme="https" />
+
             </intent-filter>
         </activity>
     </application>

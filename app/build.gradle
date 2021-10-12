@@ -34,7 +34,7 @@ repositories {
 
 dependencies {
     implementation 'com.appsflyer:af-android-sdk:6.2.3'
-    implementation 'com.android.installreferrer:installreferrer:1.1'
+    implementation 'com.android.installreferrer:installreferrer:2.2'
 
     implementation 'androidx.appcompat:appcompat:1.2.0'
     implementation 'com.google.android.material:material:1.3.0'
