@@ -33,9 +33,12 @@ repositories {
 }
 
 dependencies {
-    implementation 'com.appsflyer:af-android-sdk:6.2.3'
+    implementation 'com.appsflyer:af-android-sdk:6.4.0'
     implementation 'com.android.installreferrer:installreferrer:2.2'
-
+//    implementation 'com.appsflyer:af-android-sdk:6.2.3@aar'
+    implementation 'com.appsflyer:oaid:6.2.4'
+    implementation 'com.google.code.gson:gson:2.8.7'
+    // implementation 'com.huawei.hms:ads-identifier:3.4.39.302'
     implementation 'androidx.appcompat:appcompat:1.2.0'
     implementation 'com.google.android.material:material:1.3.0'
     implementation 'androidx.constraintlayout:constraintlayout:2.0.4'
