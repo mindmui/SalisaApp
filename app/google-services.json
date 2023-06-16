@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "351327381485",
+    "project_id": "salisaapp",
+    "storage_bucket": "salisaapp.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:351327381485:android:15d2a9cbba57ff2a2fe9e4",
+        "android_client_info": {
+          "package_name": "salisa.n.appsflyer.com"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "351327381485-3mv9aoco7ct8jd837854quh4s3h2d9u2.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCVYu6IFuKE9LlBiRbw1Dd43Swpewb6r3s"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "351327381485-3mv9aoco7ct8jd837854quh4s3h2d9u2.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

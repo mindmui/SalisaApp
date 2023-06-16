@@ -1,5 +1,6 @@
 plugins {
     id 'com.android.application'
+    id 'com.google.gms.google-services'
 }
 
 android {
@@ -8,7 +9,7 @@ android {
 
     defaultConfig {
         applicationId "salisa.n.appsflyer.com"
-        minSdkVersion 16
+        minSdkVersion 19
         targetSdkVersion 30
         versionCode 1
         versionName "1.0"
@@ -29,20 +30,48 @@ android {
 }
 
 repositories {
+    google()
     mavenCentral()
 }
 
 dependencies {
     implementation 'com.appsflyer:af-android-sdk:6.4.0'
     implementation 'com.android.installreferrer:installreferrer:2.2'
-//    implementation 'com.appsflyer:af-android-sdk:6.2.3@aar'
+    // implementation 'com.appsflyer:af-android-sdk:6.2.3@aar'
     implementation 'com.appsflyer:oaid:6.2.4'
     implementation 'com.google.code.gson:gson:2.8.7'
     // implementation 'com.huawei.hms:ads-identifier:3.4.39.302'
     implementation 'androidx.appcompat:appcompat:1.2.0'
     implementation 'com.google.android.material:material:1.3.0'
     implementation 'androidx.constraintlayout:constraintlayout:2.0.4'
+    implementation 'com.google.firebase:firebase-core:17.4.0'
     testImplementation 'junit:junit:4.+'
     androidTestImplementation 'androidx.test.ext:junit:1.1.2'
     androidTestImplementation 'androidx.test.espresso:espresso-core:3.3.0'
+    // Firebase implementation
+    implementation platform('com.google.firebase:firebase-bom:32.1.0')
+    implementation 'com.google.firebase:firebase-analytics'
+
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

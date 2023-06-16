@@ -12,14 +12,14 @@ import androidx.appcompat.app.AppCompatActivity;
 import com.appsflyer.AFInAppEventParameterName;
 import com.appsflyer.AFInAppEventType;
 import com.appsflyer.AppsFlyerLib;
+import com.google.firebase.analytics.FirebaseAnalytics;
 
 import java.util.HashMap;
 import java.util.Map;
 
 
-
-
 public class MainActivity extends AppCompatActivity {
+    private FirebaseAnalytics mFirebaseAnalytics;
 
     final Handler handler = new Handler();
 //    private Button gotoAppleButton;
@@ -28,6 +28,12 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+
+        // Initialize Firebase
+        mFirebaseAnalytics = FirebaseAnalytics.getInstance(this);
+
+        // Set user property
+        mFirebaseAnalytics.setUserProperty("favorite_fruits", "Apples");
 
         // Record Event
         Button trackEventButton = findViewById(R.id.trackEventButton);
@@ -43,10 +49,17 @@ public class MainActivity extends AppCompatActivity {
                 eventValue.put(AFInAppEventParameterName.CURRENCY, "USD");
                 AppsFlyerLib.getInstance().logEvent(getApplicationContext(), AFInAppEventType.PURCHASE, eventValue);
                 AlertDialog.Builder builder = new AlertDialog.Builder(MainActivity.this);
-                builder.setTitle("Event has been recorded");
-                builder.setMessage("Event name: " + AFInAppEventType.PURCHASE + "\nEvent values: " + eventValue);
-                builder.create();
-                builder.show();
+                    builder.setTitle("Event has been recorded");
+                    builder.setMessage("Event name: " + AFInAppEventType.PURCHASE + "\nEvent values: " + eventValue);
+                    builder.create();
+                    builder.show();
+
+                // Log Firebase record event
+                Bundle bundle = new Bundle();
+                bundle.putString(FirebaseAnalytics.Param.CURRENCY, "USD");
+                bundle.putString(FirebaseAnalytics.Param.VALUE, "1");
+                bundle.putString(FirebaseAnalytics.Param.ITEM_ID, "Sample Event");
+                mFirebaseAnalytics.logEvent(FirebaseAnalytics.Event.PURCHASE, bundle);
             }
         });
 
@@ -54,7 +67,9 @@ public class MainActivity extends AppCompatActivity {
         Button goToAppleButton = findViewById(R.id.goToAppleButton);
         goToAppleButton.setOnClickListener(new View.OnClickListener() {
             @Override
-            public void onClick(View v) { openAppleActivity(); }
+            public void onClick(View v) {
+                openAppleActivity();
+            }
         });
         }
 
@@ -62,7 +77,6 @@ public class MainActivity extends AppCompatActivity {
             Intent intent = new Intent(this, Apples.class);
             startActivity(intent);
         }
-
 
 
     }
