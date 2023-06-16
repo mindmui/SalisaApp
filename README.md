@@ -1,2 +1,2 @@
 # SalisaApp
-A Basic Android application built to demonstrate AF's features
+A Basic Android application built to demonstrate AppsFlyer's features
