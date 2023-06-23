@@ -33,7 +33,7 @@ public class MainActivity extends AppCompatActivity {
         mFirebaseAnalytics = FirebaseAnalytics.getInstance(this);
 
         // Set user property
-        mFirebaseAnalytics.setUserProperty("favorite_fruits", "Apples");
+        mFirebaseAnalytics.setUserProperty("favorite_fruits", "Papayas");
 
         // Record Event
         Button trackEventButton = findViewById(R.id.trackEventButton);
@@ -56,10 +56,10 @@ public class MainActivity extends AppCompatActivity {
 
                 // Log Firebase record event
                 Bundle bundle = new Bundle();
+                bundle.putString(FirebaseAnalytics.Param.ITEM_NAME, "Sample Event");
                 bundle.putString(FirebaseAnalytics.Param.CURRENCY, "USD");
-                bundle.putString(FirebaseAnalytics.Param.VALUE, "1");
-                bundle.putString(FirebaseAnalytics.Param.ITEM_ID, "Sample Event");
-                mFirebaseAnalytics.logEvent(FirebaseAnalytics.Event.PURCHASE, bundle);
+                bundle.putString(FirebaseAnalytics.Param.CONTENT_TYPE, "Home Button");
+                mFirebaseAnalytics.logEvent(FirebaseAnalytics.Event.SELECT_CONTENT, bundle);
             }
         });
 

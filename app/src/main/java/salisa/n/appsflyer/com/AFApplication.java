@@ -31,6 +31,9 @@ public class AFApplication extends Application {
         // Make sure you remove the following line when building to production
         appsflyer.setDebugLog(true);
 
+        // Set the OneLink template ID for User Invites
+        AppsFlyerLib.getInstance().setAppInviteOneLink("F3t6");
+
         appsflyer.subscribeForDeepLink(new DeepLinkListener() {
             @Override
             public void onDeepLinking(@NonNull DeepLinkResult deepLinkResult) {
